@@ -42,4 +42,4 @@ class StationaryExtrusion(BaseModelPlus):
 class Extruder(BaseModelPlus):
     'control whether extrusion is on or off'
     on: Optional[bool]
-    e_mm: Optional[typing.Union[int, float]]
+    e_mm: Optional[float]
