@@ -75,7 +75,10 @@ class Extruder(BaseExtruder):
         if self.on:
             # length = pt1.distance_to_self(pt2)
             length = distance_forgiving(point1, state.point)
-            return f'E{self.get_and_update_volume(length*state.extrusion_geometry.area)*self.volume_to_e:.6} '
+            if self.e_mm is None:
+                return f'E{self.get_and_update_volume(length*state.extrusion_geometry.area)*self.volume_to_e:.6} '
+            else:
+                return f'E{round(length * self.e_mm, 3)} '
         else:
             return ''
 

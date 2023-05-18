@@ -1,3 +1,4 @@
+import typing
 from typing import Optional, Any
 from fullcontrol.common import BaseModelPlus
 from math import pi
@@ -41,3 +42,4 @@ class StationaryExtrusion(BaseModelPlus):
 class Extruder(BaseModelPlus):
     'control whether extrusion is on or off'
     on: Optional[bool]
+    e_mm: Optional[typing.Union[int, float]]
